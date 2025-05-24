@@ -1,0 +1,22 @@
+@if (posts().length > 0) {
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>UserId</th>
+  </tr>
+  @for(post of posts(); track post.id) {
+  <tr>
+    <td>{{ post.id }}</td>
+    <td>{{ post.title }}</td>
+    <td>{{ post.userId }}</td>
+  </tr>
+  } @empty {
+  <tr>
+    <td colspan="3">Posts not avilable</td>
+  </tr>
+  }
+</table>
+} @else {
+<p>Posts are not available</p>
+}
